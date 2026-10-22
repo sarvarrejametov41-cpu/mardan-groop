@@ -477,49 +477,32 @@ table th { background: #0b132b; color: #94a3b8; }
     color: #f59e0b;
 }
 
-/* Telefon ekranlari uchun mukammal mobil moslashuvchanlik */
+/* Mobil ekranda jadvallarni va admin panelni to'g'rilash */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        padding: 15px 10px;
-        gap: 15px;
+    /* Jadvallarni ekranga sig'dirish va skroll qo'shish */
+    .card {
+        padding: 12px !important;
+        overflow-x: auto;
     }
 
-    .brand {
-        justify-content: center;
-        width: 100%;
-    }
-
-    .navbar nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        width: 100%;
-    }
-
-    .navbar nav a {
-        margin-left: 0 !important;
-        font-size: 0.9rem;
-    }
-
-    .cart-nav-btn {
-        margin-left: 0 !important;
+    table {
+        min-width: 600px; /* Jadval uslubi buzilmasligi uchun minimal kenglik */
         font-size: 0.85rem;
-        padding: 8px 12px;
     }
 
-    .admin-btn-link {
-        font-size: 0.85rem;
-        padding: 8px 12px;
+    table th, table td {
+        padding: 8px 6px !important;
     }
 
-    .hero-banner {
-        padding: 25px 15px;
+    /* Narx kiritish inputi va saqlash tugmasini ixcham qilish */
+    table input[type="number"] {
+        width: 60px !important;
+        padding: 4px !important;
+        font-size: 0.8rem !important;
     }
 
-    .hero-banner h1 {
-        font-size: 1.8rem;
+    .btn-approve, .btn-reject, .btn-delete {
+        padding: 6px 8px !important;
+        font-size: 0.75rem !important;
     }
 }
