@@ -312,6 +312,7 @@ table th { background: #0b132b; color: #94a3b8; }
 .btn-primary { background: #3b82f6; color: white; border: none; padding: 12px; width: 100%; border-radius: 6px; font-weight: bold; cursor: pointer; }
 .logout-btn { background: #ef4444; color: white; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; font-weight: bold; }
 .back-site { color: #94a3b8; text-decoration: none; margin-right: 15px; }
+
 /* Add Product Form */
 .add-product-card {
     background: #1c2541;
@@ -372,6 +373,7 @@ table th { background: #0b132b; color: #94a3b8; }
     cursor: pointer;
     font-size: 0.8rem;
 }
+
 /* Cart Badge & Button */
 .cart-nav-btn {
     background: #f59e0b;
@@ -474,23 +476,50 @@ table th { background: #0b132b; color: #94a3b8; }
 .cart-summary-box strong {
     color: #f59e0b;
 }
-/* Telefon ekranlari uchun menyu va tugmalarni to'g'rilash */
+
+/* Telefon ekranlari uchun mukammal mobil moslashuvchanlik */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
-        padding: 12px;
-        gap: 10px;
+        padding: 15px 10px;
+        gap: 15px;
     }
-    
+
+    .brand {
+        justify-content: center;
+        width: 100%;
+    }
+
     .navbar nav {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 8px;
+        align-items: center;
+        gap: 10px;
         width: 100%;
     }
 
+    .navbar nav a {
+        margin-left: 0 !important;
+        font-size: 0.9rem;
+    }
+
     .cart-nav-btn {
-        margin-left: 0;
+        margin-left: 0 !important;
+        font-size: 0.85rem;
+        padding: 8px 12px;
+    }
+
+    .admin-btn-link {
+        font-size: 0.85rem;
+        padding: 8px 12px;
+    }
+
+    .hero-banner {
+        padding: 25px 15px;
+    }
+
+    .hero-banner h1 {
+        font-size: 1.8rem;
     }
 }
