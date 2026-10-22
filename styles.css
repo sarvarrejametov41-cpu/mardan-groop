@@ -464,4 +464,86 @@ table th { background: #0b132b; color: #94a3b8; }
 }
 
 .cart-summary-box {
-    background: #0
+    background: #0b132b;
+    border: 1px solid #3a506b;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: right;
+    font-size: 1.1rem;
+}
+
+.cart-summary-box strong {
+    color: #f59e0b;
+}
+
+/* Mobil ekranlar uchun mukammal moslashtirish (To'g'rilangan versiya) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px 10px;
+        gap: 12px;
+    }
+
+    .brand {
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .navbar nav a,
+    .cart-nav-btn,
+    .admin-btn-link {
+        margin-left: 0 !important;
+        width: 100% !important;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        padding: 10px !important;
+    }
+
+    .hero-banner {
+        padding: 25px 15px;
+    }
+
+    .hero-banner h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Admin jadvali uchun gorizontal skroll */
+    .card {
+        padding: 10px !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+        width: 100% !important;
+        min-width: 550px !important;
+        font-size: 0.8rem !important;
+    }
+
+    table th, table td {
+        padding: 6px 4px !important;
+        white-space: nowrap;
+    }
+
+    table input[type="number"] {
+        width: 55px !important;
+        padding: 3px !important;
+        font-size: 0.75rem !important;
+    }
+
+    .btn-approve, .btn-reject, .btn-delete {
+        padding: 4px 6px !important;
+        font-size: 0.7rem !important;
+    }
+}
