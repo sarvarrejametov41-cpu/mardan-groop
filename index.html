@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARDAN GROUP - Резиновые покрытия и материалы</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Навигация -->
+    <header class="navbar">
+        <div class="brand">
+            <div class="logo-box">
+                <span class="m-logo">M</span>
+            </div>
+            <div class="brand-text">
+                <span class="brand-title">MARDAN</span>
+                <span class="brand-sub">GROUP</span>
+            </div>
+        </div>
+        <nav>
+            <a href="#catalog">Каталог</a>
+            <a href="#contacts">Контакты</a>
+            <button class="cart-nav-btn" onclick="openCartModal()">
+                🛒 Корзина <span id="cartCountBadge" class="cart-badge">0</span>
+            </button>
+            <a href="admin.html" target="_blank" class="admin-btn-link">🔐 Вход для админа</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Главный баннер -->
+        <section class="hero-banner">
+            <div class="hero-content">
+                <span class="badge">Премиум Качество</span>
+                <h1>MARDAN GROUP</h1>
+                <p>Высококачественные резиновые крошки, клей и пигменты напрямую со склада по лучшим ценам в Казахстане.</p>
+                <a href="#catalog" class="cta-btn">Смотреть каталог</a>
+            </div>
+        </section>
+
+        <!-- Контакты -->
+        <section id="contacts" class="contacts-card">
+            <h3>📞 Наши контакты</h3>
+            <p>Для консультации и заказов свяжитесь с нами:</p>
+            <div class="phone-list">
+                <a href="tel:87781001736" class="phone-item">📱 +7 778 100 17 36</a>
+                <a href="tel:87778980600" class="phone-item">📱 +7 777 898 06 00</a>
+                <a href="tel:87765224000" class="phone-item">📱 +7 776 522 40 00</a>
+            </div>
+        </section>
+
+        <!-- Каталог -->
+        <section id="catalog" class="catalog-section">
+            <h2 class="section-title">Каталог продукции</h2>
+            
+            <div class="category-block">
+                <h3 class="category-title">🔘 Резиновая крошка</h3>
+                <div class="product-grid" id="grid-kroshka"></div>
+            </div>
+
+            <div class="category-block">
+                <h3 class="category-title">🧪 Высококачественный Клей</h3>
+                <div class="product-grid" id="grid-kley"></div>
+            </div>
+
+            <div class="category-block">
+                <h3 class="category-title">🎨 Пигменты</h3>
+                <div class="product-grid" id="grid-pigment"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Модальное окно КОРЗИНЫ -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content cart-modal-content">
+            <span class="close-btn" onclick="closeCartModal()">&times;</span>
+            <h3>🛒 Ваша корзина</h3>
+            
+            <div id="cartItemsList" class="cart-items-container">
+                <!-- Товары корзины динамически грузятся сюда -->
+            </div>
+
+            <div class="cart-summary-box">
+                <p>Общая сумма заказа: <strong id="cartTotalPrice">0</strong> тг</p>
+            </div>
+
+            <div class="payment-instructions">
+                <p class="pay-notice">⚠️ Инструкция к оплате:</p>
+                <p>Переведите нужную сумму по номеру:</p>
+                <div class="pay-phone-highlight">📞 87781001736</div>
+                <small>(Kaspi Pay / Halyk / Перевод)</small>
+            </div>
+
+            <form id="cartCheckoutForm" onsubmit="submitCartOrder(event)">
+                <label>Ваше имя и фамилия:</label>
+                <input type="text" id="cartCustomerName" placeholder="Например: Арман Алиев" required>
+
+                <button type="submit" class="submit-order-btn">Отправить заявку на перевод</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

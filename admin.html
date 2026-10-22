@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ-панель - MARDAN GROUP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-body">
+
+    <!-- Логин -->
+    <div id="loginModal" class="login-overlay">
+        <div class="login-card">
+            <h2>🔐 MARDAN GROUP Admin</h2>
+            <p>Пароль для входа: <strong>admin123</strong></p>
+            <input type="password" id="adminPasswordInput" placeholder="Введите пароль...">
+            <button onclick="checkAdminLogin()" class="btn-primary">Войти</button>
+        </div>
+    </div>
+
+    <!-- Админ Дәшборд -->
+    <div id="adminPanelContent" style="display: none;">
+        <header class="navbar admin-navbar">
+            <div class="brand">
+                <span class="brand-title">MARDAN GROUP</span> (Admin)
+            </div>
+            <nav>
+                <a href="index.html" class="back-site">← На сайт</a>
+                <button onclick="adminLogout()" class="logout-btn">Выйти</button>
+            </nav>
+        </header>
+
+        <div class="container">
+            <!-- Статистика -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h4>Подтвержденная выручка</h4>
+                    <p id="totalRevenue">0 тг</p>
+                </div>
+                <div class="stat-card top-sell">
+                    <h4>🔥 Топ продаж</h4>
+                    <p id="topProduct">-</p>
+                </div>
+                <div class="stat-card low-sell">
+                    <h4>📉 Меньше всего продано</h4>
+                    <p id="leastProduct">-</p>
+                </div>
+            </div>
+
+            <!-- Yangi Material Qo'shish Bo'limi -->
+            <div class="card add-product-card">
+                <h3>➕ Добавить новый товар / материал на склад</h3>
+                <form id="addProductForm" onsubmit="addNewProduct(event)" class="add-product-form">
+                    <div class="form-group">
+                        <label>Категория:</label>
+                        <select id="newCategory" required>
+                            <option value="kroshka">Крошка</option>
+                            <option value="kley">Клей</option>
+                            <option value="pigment">Пигмент</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Название товара:</label>
+                        <input type="text" id="newName" placeholder="Например: Крошка Импорт" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Цена (тг):</label>
+                        <input type="number" id="newPrice" placeholder="Например: 350" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Количество:</label>
+                        <input type="number" id="newStock" placeholder="Например: 1000" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Ед. измерения:</label>
+                        <select id="newUnit" required>
+                            <option value="кг">кг</option>
+                            <option value="шт">шт</option>
+                            <option value="м²">м²</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-add-product">Добавить в каталог</button>
+                </form>
+            </div>
+
+            <!-- Поиск и Фильтр -->
+            <div class="card search-card">
+                <h3>🔍 Поиск заказов</h3>
+                <div class="search-box">
+                    <input type="text" id="searchInput" onkeyup="filterSales()" placeholder="Поиск по имени клиента или дате (напр: 2026-10-22 или Арман)...">
+                </div>
+            </div>
+
+            <!-- Заказы / Заявки -->
+            <div class="card">
+                <h3>📑 Список заказов и переводов</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Дата и время</th>
+                            <th>Имя клиента</th>
+                            <th>Товар</th>
+                            <th>Кол-во</th>
+                            <th>Сумма</th>
+                            <th>Статус перевода</th>
+                            <th>Действие (Админ)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="salesTableBody"></tbody>
+                </table>
+            </div>
+
+            <!-- Склад -->
+            <div class="card">
+                <h3>📦 Остатки материалов на складе</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Категория</th>
+                            <th>Наименование</th>
+                            <th>Цена</th>
+                            <th>Остаток</th>
+                            <th>Удалить</th>
+                        </tr>
+                    </thead>
+                    <tbody id="stockTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
