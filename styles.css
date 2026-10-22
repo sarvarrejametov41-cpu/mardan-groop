@@ -474,3 +474,23 @@ table th { background: #0b132b; color: #94a3b8; }
 .cart-summary-box strong {
     color: #f59e0b;
 }
+/* Telefon ekranlari uchun menyu va tugmalarni to'g'rilash */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 12px;
+        gap: 10px;
+    }
+    
+    .navbar nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .cart-nav-btn {
+        margin-left: 0;
+    }
+}
