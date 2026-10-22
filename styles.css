@@ -464,46 +464,4 @@ table th { background: #0b132b; color: #94a3b8; }
 }
 
 .cart-summary-box {
-    background: #0b132b;
-    border: 1px solid #3a506b;
-    padding: 12px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    text-align: right;
-    font-size: 1.1rem;
-}
-
-.cart-summary-box strong {
-    color: #f59e0b;
-}
-
-/* Mobil ekranda jadvallarni va admin panelni to'g'rilash */
-@media (max-width: 768px) {
-    .card {
-        padding: 10px !important;
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    table {
-        width: 100% !important;
-        min-width: 550px !important;
-        font-size: 0.8rem !important;
-    }
-
-    table th, table td {
-        padding: 6px 4px !important;
-        white-space: nowrap;
-    }
-
-    table input[type="number"] {
-        width: 55px !important;
-        padding: 3px !important;
-        font-size: 0.75rem !important;
-    }
-
-    .btn-approve, .btn-reject, .btn-delete {
-        padding: 4px 6px !important;
-        font-size: 0.7rem !important;
-    }
-}
+    background: #0
